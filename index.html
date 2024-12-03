@@ -1,0 +1,412 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Saylani Welfare</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+header img { height: 50px; }
+nav a { margin: 0 15px; text-decoration: none; color: #333; font-weight: 500; }
+nav a:last-child { color: #4CAF50; }
+.buttons a { margin-left: 15px; padding: 10px 20px; text-decoration: none; color: #fff; border-radius: 5px; }
+.buttons .donate { background-color: #007BFF; }
+.buttons .sponsor { background-color: #4CAF50; }
+.first-page { top: 8%; padding: 60px 20px; position: relative; text-align: left; height: 100%; width: 100%; }
+.first-page h1 { font-size: 2rem; color: #333; }
+.first-page h1 span { color: #4CAF50; }
+.first-page p { font-size: 1.6rem; color: #333; margin: 20px 0; font-weight: bold; }
+.first-page .p2 { font-size: 1.2rem; color: #333; margin: 20px 0; }
+.first-page .explore { display: inline-block; padding: 10px 20px; border: 2px solid #333; text-decoration: none; color: #000000; border-radius: 5px; font-weight: bold; }
+.images { height: 450px; width: 450px; top: 2%; position: absolute; left: 55%; background-image: url(4.png); background-size: cover; background-repeat: no-repeat; }
+.donation-container { top: 20%; background-color: #aacab4; padding: 1rem; border-radius: 18px; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; position: relative; text-align: left; height: 100px; width: calc(100% - 90px); margin-bottom: 0; }
+.donation-input { display: flex; align-items: center; color: white; border-radius: 8px; overflow: hidden; }
+.donation-input .label, .donation-input .currency { padding: 0.5rem 1rem; }
+.amount-input { width: 4rem; text-align: center; padding: 0.5rem; background-color: #fff; color: #000; border: 1px solid #ccc; border-radius: 8px; }
+.category-btn { background-color: #fff; color: #333; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s; }
+.category-btn:hover { background-color: #f0fdf4; }
+.quick-donate-btn { background-color: #38a169; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s; }
+.quick-donate-btn:hover { background-color: #2f855a; }
+
+.about { top: 0; margin-top: 0; }
+.section-title { text-align: center; font-size: 2rem; font-weight: 600; margin: 1rem 0; color: #333;margin-bottom: 40px; }
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; padding: 0 1.5rem; margin-bottom: 40px; }
+.service-card { background-color: #e6f7d4; border-radius: 12px; padding: 1rem; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+.service-card:hover { transform: scale(1.05); }
+.service-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 0.5rem; }
+.service-card p { font-size: 1rem; font-weight: 500; color: #333; }
+
+
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 1.5rem; margin-bottom: 40px; }
+.project-card { background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); position: relative; display: flex; flex-direction: column; }
+.project-card img { width: 100%; height: 100%; object-fit: cover; }
+.project-title { position: absolute; top: 5%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.6); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 1rem; font-weight: 500; text-align: center; }
+.donate-button { position: absolute; bottom: 0; width: 100%; background-color: #34c759; color: white; font-size: 1rem; font-weight: 600; text-align: center; padding: 0.75rem; border: none; border-radius: 0 0 12px 12px; transition: background-color 0.3s; }
+.donate-button:hover { background-color: #2faa4b; }
+
+
+.otherproject { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 1200px; margin: 0 auto; margin-bottom: 40px; }
+.left-section { flex: 1; min-width: 300px; background-color: #4CAF50; color: white; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; }
+.left-section p { font-size: 20px; line-height: 1.6; margin-bottom: 20px; margin-top: 0; }
+.left-section img { width: 100%; height: 90%; border-radius: 10px; }
+.right-section { flex: 2; min-width: 300px; }
+.right-section h2 { font-size: 28px; margin-bottom: 20px; color: #4CAF50; font-weight: bold; }
+.project { display: flex; align-items: flex-start; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 15px; transition: transform 0.3s ease;  }
+.project:hover { transform: translateY(-5px); }
+.project img { width: 60px; height: 60px; margin-right: 20px; border-radius: 50%; }
+.project h3 { font-size: 22px; margin: 0; color: #007BFF; }
+.project p { margin: 5px 0 0; font-size: 16px; color: #555; line-height: 1.6; }
+
+
+.testimonial-section { text-align: center; padding: 50px 20px; }
+.testimonial-section h2 { color: #8bc34a; font-size: 24px; margin-bottom: 10px; }
+.testimonial-section h3 { color: #333; font-size: 32px; margin-bottom: 40px; }
+.testimonial-card { background-color: #e0e0e0; padding: 40px 20px; border-radius: 10px; display: inline-block; max-width: 800px; width: 100%; }
+.testimonial-card img { border-radius: 50%; width: 100px; height: 100px; object-fit: cover; }
+.testimonial-card h4 { color: #1a237e; font-size: 20px; margin: 20px 0 10px; }
+.testimonial-card p { color: #757575; font-size: 16px; margin: 0; }
+.testimonial-card .designation { color: #757575; font-size: 14px; margin-bottom: 20px; }
+.testimonial-card .testimonial-text { color: #333; font-size: 16px; margin: 20px 0; }
+@media (max-width: 768px) { .container { flex-direction: column; } .left-section { margin-bottom: 20px; } }
+.stats-section { background-color: #0073e6; color: white; text-align: center; padding: 50px 0; position: relative;  }
+.stats-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; }
+.stats-container { display: flex; justify-content: space-around; flex-wrap: wrap; position: relative; z-index: 1; }
+.stat-item { margin: 20px; text-align: center; }
+.stat-item img { width: 80px; height: 80px; border-radius: 50%; background-color: white; padding: 20px; }
+.stat-item h3 { margin: 10px 0 5px; font-size: 24px; }
+.stat-item p { margin: 0; font-size: 18px; }
+@media (max-width: 768px) { .stats-container { flex-direction: column; align-items: center; } }
+
+        .cardcontainer { max-width: 1200px; margin: auto; padding: 20px; margin-bottom: 40px; }
+        .news-title { text-align: center; font-size: 2em; margin-bottom: 40px; }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .news-item { background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; }
+    .news-item img { width: 100%; }
+    .news-date { background: #8bc34a; color: #fff; padding: 5px 10px; border-radius: 5px; margin: 10px; font-size: 0.9em; }
+    .news-content { padding: 10px; }
+    .news-footer { text-align: left; padding: 10px; }
+    .news-footer a { color: #333; text-decoration: none; font-size: 1.5em; display: inline-block; }
+
+
+
+    footer { display: flex; justify-content: space-between; padding: 20px; background-color: #000000; } /* Black background for footer */
+    footer img { width: 250px; }
+    .social-icons { margin-top: 50px; margin-left: 20px; }  /* Added margin-left for gap */
+    .social-icons a { margin: 0 5px; font-size: 24px; color: white; } /* White icons */
+    .column { flex: 1; padding: 0 10px; }
+    .column h3 { font-size: 18px; color: white; } /* White text for headings */
+    .column ul { list-style: none; padding: 0; }
+    .column ul li { margin-bottom: 10px; }
+    .column ul li a { text-decoration: none; color: white; } /* White links */
+    .contact-info p { margin: 5px 0; color: white; } /* White text for contact details */
+    .whatsapp i { margin-right: 5px; color: white; } /* White WhatsApp icon */
+
+    .foamcontainer { display: flex; justify-content: center; align-items: center; height: 300px; background-color: #8BC34A; margin-bottom: 40px; }
+      .content { text-align: center; color: white; position: relative; }
+      .content h1 { font-size: 2em; margin-bottom: 20px; }
+      .content input[type="email"] { padding: 10px; width: 500px; border: 1px solid white; border-radius: 5px; margin-bottom: 20px; font-size: 1em; color: #8BC34A; }
+      .content button { 
+        padding: 10px 20px; 
+        width: 500px; 
+        border: 2px solid white; 
+        border-radius: 5px; 
+        background-color: white; 
+        color: #8BC34A; 
+        cursor: pointer; 
+        transition: all 0.3s ease; 
+      }
+      .content button:hover { 
+        background-color: blue; 
+        color: white; 
+        border-color: blue; 
+      }
+  </style>
+</head>
+    </style>
+  </head>
+  <body>
+    <header>
+      <img alt="Saylani Welfare logo" height="50" src="logo.png" width="150"/>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Media</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Bank Details</a>
+        <a href="#">Other Websites</a>
+      </nav>
+      <div class="buttons">
+        <a class="donate" href="#">DONATE NOW</a>
+        <a class="sponsor" href="#">BE A SPONSOR</a>
+      </div>
+    </header>
+  
+    <section class="first-page">
+      <h1>
+        Welcome to the <span>Saylani</span> Welfare<br/>
+        Non-Governmental Organization in<br/>
+        Pakistan
+      </h1>
+      <p>
+        The largest NGO offering free <span class="multiple-text" id="multiple-text" style="color: #007BFF;"></span>
+      </p>
+      <p class="p2">
+        Saylani Welfare is on the ground and already working with local<br/>
+        communities in over 63 areas to support underprivileged families.
+      </p>
+      <a class="explore" href="#">Explore More</a>
+      <div class="images"></div>
+       <div class="donation-container">
+      <div class="donation-input">
+        <span class="label">General</span>
+        <input class="amount-input" type="text" value="0"/>
+        <span class="currency">Rs.</span>
+      </div>
+      <button class="category-btn">Blood Bank / Thalassemia Treatment</button>
+      <button class="category-btn">Family Kifalat</button>
+      <button class="category-btn">Medical</button>
+      <button class="category-btn">Food</button>
+      <button class="quick-donate-btn">Quick Donate</button>
+    </div>
+    </section>
+  
+    <section class="about">
+      <h1 class="section-title">What We Are Doing</h1>
+  
+      <div class="services">
+        <div class="service-card">
+          <img src="walfare1.png" alt="Welfare">
+          <p>Welfare</p>
+        </div>
+        <div class="service-card">
+          <img src="Medical_icon-removebg-preview.png" alt="Medical">
+          <p>Medical</p>
+        </div>
+        <div class="service-card">
+          <img src="Online Sadqah.png" alt="Online Sadaqah">
+          <p>Online Sadaqah</p>
+        </div>
+        <div class="service-card">
+          <img src="water.png" alt="Clean Water">
+          <p>Clean Water</p>
+        </div>
+        <div class="service-card">
+          <img src="education.png" alt="Education">
+          <p>Education</p>
+        </div>
+        <div class="service-card">
+          <img src="food.png" alt="Food">
+          <p>Food</p>
+        </div>
+      </div>
+  
+      <div class="projects">
+        <div class="project-card">
+          <img src="1.1.jpg" alt="Sponsor IT Students">
+          <p class="project-title">Sponsor IT Students</p>
+          <button class="donate-button">Donate</button>
+        </div>
+        <div class="project-card">
+          <img src="2.2.jpg" alt="Daily Food">
+          <p class="project-title">Daily Food</p>
+          <button class="donate-button">Donate</button>
+        </div>
+        <div class="project-card">
+          <img src="3.3.jpg" alt="Sponsor Vocational Students">
+          <p class="project-title">Sponsor Vocational Students</p>
+          <button class="donate-button">Donate</button>
+        </div>
+      </div>
+    </section>
+    <div class="otherproject">
+      <!-- Left Section -->
+      <div class="left-section">
+          <p>Saylani serves almost 300,000 underprivileged individuals daily.</p>
+          <img src="2.2.jpg" alt="People being served food by Saylani Welfare">
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-section">
+          <h2>Other Projects</h2>
+
+          <!-- Project 1 -->
+          <div class="project">
+              <img src="project 1.png" alt="">
+              <div>
+                  <h3>Hepatitis</h3>
+                  <p>Saylani Welfare has set up a clinic for the best treatment of hepatitis patients where they are being treated with care and dignity.</p>
+              </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project">
+              <img src="project 2.png" alt="">
+              <div>
+                  <h3>Housing Society</h3>
+                  <p>Saylani Welfare provides housing facilities to the homeless. Thousands of houses and flats have been constructed and offered in easy installments.</p>
+              </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project">
+              <img src="project3.png" alt="">
+              <div>
+                  <h3>IT Literacy</h3>
+                  <p>We aim to train 1 million software developers, contributing billions annually to Pakistan's economy and easing its debt burden.</p>
+              </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project">
+              <img src="project4.png" alt="">
+              <div>
+                  <h3>Tharparkar</h3>
+                  <p>Saylani has established schools, RO plants, and wells in Tharparkar, while also bringing children to Karachi for education in modern technologies.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="stats-section">
+    <div class="stats-container">
+      <div class="stat-item">
+        <img src="food.png" alt="Food icon" width="80" height="80" />
+        <h3>300,000</h3>
+        <p>Food<br>(Daily)</p>
+      </div>
+      <div class="stat-item">
+        <img src="walfare1.png" alt="Family adoption icon" width="80" height="80" />
+        <h3>20,000</h3>
+        <p>Family Adoption<br>(Monthly)</p>
+      </div>
+      <div class="stat-item">
+        <img src="education.png" alt="Education icon" width="80" height="80" />
+        <h3>25,000</h3>
+        <p>Education<br>(Monthly)</p>
+      </div>
+      <div class="stat-item">
+        <img src="Medical_icon-removebg-preview.png" alt="Medical icon" width="80" height="80" />
+        <h3>125,000</h3>
+        <p>Medical<br>(Monthly)</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="testimonial-section">
+    <h2>Our Testimonials</h2>
+    <h3>What They Say?</h3>
+    <div class="testimonial-card">
+      <img src="mbk.png" alt="Portrait of Arshad Wali Muhammad" width="100" height="100"/>
+      <h4>Muhammad Bakhtawar Khan</h4>
+      <p class="designation">(C.O.O. & Director, Premier Cables Pvt. Ltd)</p>
+      <p class="testimonial-text">
+        Saylani Welfare Trust is a name that needs no introduction today. The journey this team embarked upon was made possible owing to their zeal, enthusiasm & commitment to the society and by the grace of Allah (SWT), it has become a name that we need and not just the one we want. I wish Saylani’s team all the success and blessing that they deserve for future, May God bless Saylani and ensure prosperity and happiness for our people, Ameen!
+      </p>
+    </div>
+  </div>
+  <div class="cardcontainer">
+    <h1 class="news-title">News</h1>
+    <div class="news-grid">
+      <!-- Card 1 -->
+      <div class="news-item">
+        <img src="card.1.jpg" alt="Meeting room">
+        <div class="news-content">
+          <span class="news-date">Mon Nov 18 2024</span>
+          <h3>Saylani Delegation Explores Collaboration with TEV...</h3>
+        </div>
+        <div class="news-footer"><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- Card 2 -->
+      <div class="news-item">
+        <img src="card.2.png" alt="Award ceremony">
+        <div class="news-content">
+          <span class="news-date">Sat Nov 16 2024</span>
+          <h3>Saylani Mass I.T. Training has been honored with ...</h3>
+        </div>
+        <div class="news-footer"><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- Card 3 -->
+      <div class="news-item">
+        <img src="card.3.jpg" alt="Tech event">
+        <div class="news-content">
+          <span class="news-date">Wed Sep 18 2024</span>
+          <h3>Beginning of a New Era in Tech, Saylani Welfare Za...</h3>
+        </div>
+        <div class="news-footer"><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- Card 4 -->
+      <div class="news-item">
+        <img src="card.4.jpg" alt="Group photo">
+        <div class="news-content">
+          <span class="news-date">Wed Aug 28 2024</span>
+          <h3>Mr. Zain Jeewanjee visited Saylani Welfare Interna...</h3>
+        </div>
+        <div class="news-footer"><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </div>
+
+    <!-- foam -->
+    <div class="foamcontainer">
+      <div class="content">
+        <h1>Saylani Guide</h1>
+        <input type="email" placeholder="Enter E-Mail Address"/>
+        <br/>
+        <button>SUBSCRIBE</button>
+      </div>
+    </div>
+ <!-- footer -->
+  <footer>
+    <div class="column">
+      <img alt="Logo" src="logo.png" width="200"/>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="#">Introduction</a></li>
+        <li><a href="#">Chairman Message</a></li>
+        <li><a href="#">Annual Report</a></li>
+        <li><a href="#">Bank Details</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Donations</a></li>
+      </ul>
+    </div>
+    <div class="column contact-info">
+      <h3>Contact</h3>
+      <p>A-25, Bahadurabad Chowrangi, Karachi</p>
+      <p>UAN: 111-729-526</p>
+      <p>Cell: 92-311-1729526</p>
+      <div class="whatsapp"><i class="fab fa-whatsapp"></i><p>03200276941</p><p>For Istikhara Contact</p></div>
+    </div>
+  </footer>
+
+   
+   
+  
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="saylani.js"></script>
+  </body>
+</html>

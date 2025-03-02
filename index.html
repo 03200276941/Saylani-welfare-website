@@ -126,7 +126,95 @@ nav a:last-child { color: #4CAF50; }
         border-color: blue; 
       }
       /* Base styles for all screen sizes */
+   /* Add this media query section at the end of existing CSS */
+   @media (max-width: 1200px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            nav {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .buttons {
+                margin-top: 15px;
+            }
+        }
 
+        @media (max-width: 768px) {
+            .first-page h1 {
+                font-size: 1.5rem;
+            }
+            
+            .first-page p {
+                font-size: 1.2rem;
+            }
+            
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .otherproject {
+                flex-direction: column;
+            }
+            
+            .left-section,
+            .right-section {
+                width: 100%;
+            }
+            
+            .project {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .project img {
+                margin-bottom: 15px;
+            }
+            
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .column {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                margin: 5px;
+                font-size: 0.9rem;
+            }
+            
+            .buttons a {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .foamcontainer .content input[type="email"],
+            .foamcontainer .content button {
+                width: 90%;
+            }
+        }
 
 @media (min-width: 768px) {
   .images img {
